@@ -16,3 +16,4 @@ options:
 schema:
   host: str
   port: int
+  hostID: "str?"
