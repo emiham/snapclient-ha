@@ -4,11 +4,11 @@
 flags_available=("host" "port" "hostID")
 flags=()
 
-for i in ${!flags_available[@]}; do
-    if bashio::config.exists ${flags_available[$i]}; then
-        flags+=("--${flags_available[$i]} $(bashio::config ${flags_available[$i]})")
+for flag in ${flags_available[@]}; do
+    if bashio::config.exists ${flag}; then
+        flags+=("--${flag} $(bashio::config ${flag})")
     fi
 done
 
-echo "Starting snapclient with flags: ${flags[@]+"${flags[@]}"}"
-snapclient ${flags[@]+"${flags[@]}"}
+echo "Starting snapclient with flags: ${flags[*]}"
+snapclient ${flags[*]}
