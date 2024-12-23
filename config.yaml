@@ -1,6 +1,6 @@
 name: "Snapclient"
 description: "Use your Home Assistant server as a Snapcast client"
-version: "0.1.0"
+version: "0.2.0"
 slug: "snapclient"
 init: false
 audio: true
@@ -14,6 +14,6 @@ options:
   host: "127.0.0.1"
   port: 1704
 schema:
-  host: str
-  port: int
-  hostID: "str?"
+  host: str?
+  port: port?
+  hostID: str?

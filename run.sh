@@ -1,10 +1,14 @@
 #!/usr/bin/with-contenv bashio
 
-echo "Starting snapclient..."
 
-hostID=""
-if bashio::config.exists 'hostID'; then
-    hostID="--hostID $(bashio::config 'hostID')"
-fi
+flags_available=("host" "port" "hostID")
+flags=()
 
-snapclient -h $(bashio::config 'host') -p $(bashio::config 'port') $hostID
+for i in ${!flags_available[@]}; do
+    if bashio::config.exists ${flags_available[$i]}; then
+        flags+=("--${flags_available[$i]} $(bashio::config ${flags_available[$i]})")
+    fi
+done
+
+echo "Starting snapclient with flags: ${flags[@]+"${flags[@]}"}"
+snapclient ${flags[@]+"${flags[@]}"}

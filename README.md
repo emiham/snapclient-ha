@@ -2,10 +2,12 @@
 
 # Snapclient for Home Assistant
 
-This addon lets you use your Home Assistant server as a client for [Snapcast](https://github.com/badaix/snapcast). 
-
-Right now it's very bare-boned, but it's running on my system without any issues. If you install it and have any problems please open an issue and I will see what I can do. 
+This add-on lets you use your Home Assistant server as a client for
+[Snapcast](https://github.com/badaix/snapcast).
 
 # Configuration
 
-Set up your server and port in the configuration tab of the addon. 
+The default host IP is `127.0.0.1` (i.e. the computer running Home Assistant),
+and the default port is `1704`. You can change this in the configuration tab.
+
+You can also optionally set the `hostID`.
