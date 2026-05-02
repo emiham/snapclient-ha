@@ -1,7 +1,6 @@
-ARG BUILD_FROM
-FROM $BUILD_FROM
+FROM ghcr.io/home-assistant/base:latest
 
-RUN apk add --no-cache \ 
+RUN apk add --no-cache \
         snapcast-client \
         alsa-plugins-pulse
 
